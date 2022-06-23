@@ -4,21 +4,23 @@ import { Capacitor } from '@capacitor/core';
 import { Directory, Filesystem } from '@capacitor/filesystem';
 import { Storage } from '@capacitor/storage';
 import { Platform } from '@ionic/angular';
+import { HttpService } from './http.service';
 
 
 
 @Injectable({
   providedIn: 'root',
 })
+
 export class PhotoService {
   public photos: UserPhoto[] = [];
   private PHOTO_STORAGE = 'photos';
 
-  constructor(private platform: Platform) {
+  constructor (private platform: Platform, private http: HttpService) {
     this.platform = platform;
   }
 
-  public async loadSaved() {
+  public async loadSaved () {
     // Retrieve cached photo array data
     const photoList = await Storage.get({ key: this.PHOTO_STORAGE });
     this.photos = JSON.parse(photoList.value) || [];
@@ -48,7 +50,7 @@ export class PhotoService {
   // Store a reference to all photo filepaths using Storage API:
   // https://capacitor.ionicframework.com/docs/apis/storage
   */
-  public async addNewToGallery() {
+  public async addNewToGallery () {
     // Take a photo
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri, // file-based data; provides best performance
@@ -69,9 +71,11 @@ export class PhotoService {
   }
 
   // Save picture to file on device
-  private async savePicture(photo: Photo) {
+  private async savePicture (photo: Photo) {
     // Convert photo to base64 format, required by Filesystem API to save
     const base64Data = await this.readAsBase64(photo);
+    
+    this.http.postPhoto(base64Data)
 
     // Write the file to the data directory
     const fileName = new Date().getTime() + '.jpeg';
@@ -99,7 +103,7 @@ export class PhotoService {
   }
 
   // Read camera photo into base64 format based on the platform the app is running on
-  private async readAsBase64(photo: Photo) {
+  private async readAsBase64 (photo: Photo) {
     // "hybrid" will detect Cordova or Capacitor
     if (this.platform.is('hybrid')) {
       // Read the file into base64 format
@@ -118,7 +122,7 @@ export class PhotoService {
   }
 
   // Delete picture by removing it from reference data and the filesystem
-  public async deletePicture(photo: UserPhoto, position: number) {
+  public async deletePicture (photo: UserPhoto, position: number) {
     // Remove this photo from the Photos reference data array
     this.photos.splice(position, 1);
 

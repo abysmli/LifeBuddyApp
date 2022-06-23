@@ -7,9 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ExploreContainerComponent implements OnInit {
   @Input() name: string;
+  data: string;
   
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
 }
