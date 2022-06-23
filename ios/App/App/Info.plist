@@ -2,16 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>To pick pictures</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>To save pictures</string>
-	<key>NSCameraUsageDescription</key>
-	<string>To take pictures</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Photo Gallery Cap Ng</string>
+	<string>Life Buddy</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -33,6 +27,12 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>To Take Photos and Videos</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>To Save Photos and Videos</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>To Get Photos and Videos</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

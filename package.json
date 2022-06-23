@@ -1,8 +1,7 @@
 {
-  "name": "photo-gallery-ng-capacitor",
+  "name": "life-buddy",
   "version": "2.0.0",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/docs/angular/your-first-app",
+  "author": "Yuan Li",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -28,6 +27,7 @@
     "@capacitor/storage": "^1.0.0",
     "@ionic/angular": "^5.6.7",
     "@ionic/pwa-elements": "^3.0.2",
+    "codelyzer": "^6.0.2",
     "core-js": "^3.6.5",
     "rxjs": "^6.5.5",
     "tslib": "^2.0.0",
@@ -41,10 +41,10 @@
     "@angular/language-service": "^12.0.1",
     "@capacitor/cli": "^3.0.0",
     "@ionic/angular-toolkit": "^3.1.1",
+    "@ionic/cli": "6.20.0",
     "@types/jasmine": "^3.5.10",
     "@types/jasminewd2": "^2.0.8",
     "@types/node": "^13.11.1",
-    "codelyzer": "^5.2.2",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~6.3.2",
@@ -52,10 +52,9 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
-    "protractor": "~7.0.0",
     "ts-node": "^8.8.2",
     "tslint": "~6.1.0",
     "typescript": "^4.2.4"
   },
-  "description": "Build a photo gallery app that runs on iOS, Android, and the web - with just one codebase"
+  "description": "Life Buddy Demo"
 }
